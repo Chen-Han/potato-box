@@ -1,4 +1,3 @@
-
 class ExampleApplication extends React.Component {
   render() {
     var elapsed = Math.round(this.props.elapsed  / 100);
@@ -22,10 +21,12 @@ var start = new Date().getTime();
 class PtLabel extends React.Component{
   
   render(){
-    var {children,setTabIndex,index,...otherProps} = this.props;
-    
+    var {children,setTabIndex,index,active,...otherProps} = this.props;
+    var style = {
+      backgroundColor:active?"yellow":"orange"
+    }
     return (
-        <li {...otherProps}>{children}</li>
+        <li {...otherProps} style={style}>{children}</li>
       );
   }
 }
@@ -41,13 +42,13 @@ class PtLabelList extends React.Component{
 
           function handleClick(e){
             console.log(e);
-            if(index!==activetab){
+            if(index!==activeTab){
               onTabChange(index);
             }
           }
 
           return (
-              <PtLabel index={index} active={index===activeTab} onClick={handleClick}>{label}</PtLabel>
+              <PtLabel key={index} index={index} active={index===activeTab} onClick={handleClick}>{label}</PtLabel>
             );
         });
       }
@@ -76,15 +77,16 @@ class PtPane extends React.Component{
 class PtPaneList extends React.Component{
   
   render(){
+    var {panes,activeTab,...otherProps} = this.props;
+
     function getPanes(panes){
-      return panes.map(function(pane){
+      return panes.map(function(pane,index){
         var {label,children,...otherProps} = pane;
-        return (<PtPane label={label} {...otherProps} >
+        return (<PtPane key={index} label={label} active={activeTab===index} {...otherProps} >
             {children}
           </PtPane>);
       });
     }
-    var {panes,...otherProps} = this.props;
     return (
         <div className="pt-pane-list" {...otherProps}>
           {getPanes(panes)}
@@ -97,7 +99,13 @@ class PtPaneList extends React.Component{
 
 class PtBox extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.state = {activeTab:0};
+  }
+
   render(){
+    var self = this;
     var {children,tabs,title,iconClass,...otherProps} = this.props;
     /**
     * tabs: [tab ...]
@@ -105,11 +113,15 @@ class PtBox extends React.Component {
     * 
     * 
     **/
-    
+    var {activeTab,...otherState} = this.state;
 
     function setTabIndex(idx){
-      //do sth
+      console.log(idx);
+      self.setState({
+        activeTab:idx
+      });
     }
+
 
     function getLabelList(tabs){
       function getLabels(tabs){
@@ -118,15 +130,13 @@ class PtBox extends React.Component {
         });
       }
       return (
-          <PtLabelList labels={getLabels(tabs)} onTabChange={setTabIndex}></PtLabelList>
-        );
-
-      
+          <PtLabelList labels={getLabels(tabs)} activeTab={activeTab} onTabChange={setTabIndex}></PtLabelList>
+        );      
     }
     
     function getPaneList(tabs){
       return (
-        <PtPaneList panes={tabs}></PtPaneList>
+        <PtPaneList panes={tabs} activeTab={activeTab}></PtPaneList>
         );
     }
 
@@ -153,7 +163,6 @@ class PtBox extends React.Component {
 var tabs = [{
   label:"l1",
   children:(<h3>Hello World!</h3>),
-  active:true
 },{
   label:"l2",
   children:(<h3>Hello World 2!</h3>)
