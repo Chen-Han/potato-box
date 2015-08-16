@@ -8,5 +8,39 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "babelify": "~6.1.3"
+  },
+  "name": "potato-box",
+  "version": "1.0.0",
+  "description": "Simple react tabs with good HTML mark-up",
+  "main": "index.js",
+  "dependencies": {
+    "babelify": "~6.1.3",
+    "browserify": "~11.0.1",
+    "gulp": "~3.9.0",
+    "gulp-babel": "~5.2.0",
+    "react": "~0.13.3",
+    "vinyl-source-stream": "~1.1.0",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0",
+    "vinyl-buffer": "~1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Chen-Han/potato-box.git"
+  },
+  "keywords": [
+    "react",
+    "react-js",
+    "tabs",
+    "box",
+    "potato-box"
+  ],
+  "author": "chen-han",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Chen-Han/potato-box/issues"
   }
 }
