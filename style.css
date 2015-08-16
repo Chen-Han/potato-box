@@ -235,12 +235,27 @@ body {
 }
 .pt-box.box-sm .pt-content {
   height: 250px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.pt-box.box-sm.box-clear .pt-content {
+  height: 230px;
 }
 .pt-box.box-md .pt-content {
   height: 350px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.pt-box.box-md.box-clear .pt-content {
+  height: 330px;
 }
 .pt-box.box-lg .pt-content {
   height: 450px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.pt-box.box-lg.box-clear .pt-content {
+  height: 430px;
 }
 /* General pt-label style across all types */
 .pt-label {

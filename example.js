@@ -208,8 +208,9 @@ var boxes =
       </pre>)
   }]
 },{
-  title:"Clear Box",
-  boxStyle:"clear",
+  title:"Clear Box, box-sm",
+  boxStyle:"box-clear",
+  size:"box-sm",
   tabs:[{
     label:"HTML",
     children:(<pre className="prettyprint">
