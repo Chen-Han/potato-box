@@ -3,33 +3,180 @@
   <head>
     <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
     <title>Basic Example with JSX and ES6 features</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <!-- <link href="prettify.css" type="text/css" rel="stylesheet" /> -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <link rel="stylesheet" href="style.css">
+
   </head>
   <body>
-    <h1>Basic Example with JSX and ES6 features</h1>
-    <div id="container">
-      <p>
-        To install React, follow the instructions on
-        <a href="https://github.com/facebook/react/">GitHub</a>.
-      </p>
-      <p>
-        If you can see this, React is not working right.
-        If you checked out the source from GitHub make sure to run <code>grunt</code>.
-      </p>
+    <div class="container" style="padding-top:60px">
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- <div class="pt-box box-danger">
+            <div class="pt-header clear-fix">
+              <div class="title">
+                <h4>Pilled Label</h4>
+              </div>
+              <ul class="pt-label-list">
+                <li class="pt-label label-default"><a href="" >Link 1</a></li>
+                <li class="pt-label label-default active"><a href="" >Link 2</a></li>
+                <li class="pt-label label-primary"><a href="" >Link 3</a></li>
+                <li class="pt-label label-default label-rounded"><a href="" >
+                  Link 4
+                </a></li>
+              </ul>
+            </div>
+            <div class="pt-content">
+              <div class="pt-pane-list">
+                <div class="pt-pane"></div>
+                <div class="pt-pane"></div>
+                <div class="pt-pane"></div>
+              </div>
+            </div>
+          </div> -->
+          <div id="box0"></div>
+        </div>
+        <div class="col-sm-6">
+          <!-- <div class="pt-box box-warning">
+            <div class="pt-header clear-fix">
+              <div class="title">
+                <h4>Clear Label</h4>
+              </div>
+              <ul class="pt-label-list">
+                <li class="pt-label label-clear active"><a href="" >Link 1</a></li>
+                <li class="pt-label label-clear"><a href="" >Link 2</a></li>
+                <li class="pt-label label-clear"><a href="" >Link 3</a></li>
+                <li class="pt-label label-clear"><a href="" >
+                  Link 4
+                </a></li>
+              </ul>
+            </div>
+            <div class="pt-content">
+              <div class="pt-pane-list">
+                <div class="pt-pane"></div>
+                <div class="pt-pane"></div>
+                <div class="pt-pane"></div>
+              </div>
+          </div>
+          </div> -->
+          <div id="box1"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- <div class="pt-box box-success">
+            <div class="pt-header clear-fix">
+              <div class="title">
+                <h4>
+                  <i class="fa fa-gift"></i>
+                  Icon Label
+                </h4>
+              </div>
+              <ul class="pt-label-list">
+                <li class="pt-label label-icon"><i class="fa fa-user"></i></li>
+                <li class="pt-label label-icon"><i class="fa fa-cloud"></i></li>
+                <li class="pt-label label-icon"><i class="fa fa-plus"></i></li>
+                <li class="pt-label label-icon"><i class="fa fa-close"></i></li>
+              </ul>
+            </div>
+            <div class="pt-content">
+              <div class="pt-pane-list">
+                <div class="pt-pane"></div>
+                <div class="pt-pane"></div>
+                <div class="pt-pane"></div>
+              </div>
+            </div>
+          </div> -->
+          <div id="box2"></div>
+        </div>
+        <div class="col-sm-6">
+          <!-- <div class="pt-box clear">
+            <div class="pt-header clear-fix">
+              <div class="title">
+                <h4>
+                  Clear Box
+                </h4>
+              </div>
+              <ul class="pt-label-list">
+                <li class="pt-label label-lined active"><a href="" >Link 1</a></li>
+                <li class="pt-label label-lined"><a href="" >Link 2</a></li>
+                <li class="pt-label label-lined"><a href="" >Link 3</a></li>
+                <li class="pt-label label-lined"><a href="" >
+                  Link 4
+                </a></li>
+              </ul>
+            </div>
+            <div class="pt-content">
+              <div class="pt-pane-list">
+                <div class="pt-pane"></div>
+                <div class="pt-pane"></div>
+                <div class="pt-pane"></div>
+              </div>
+            </div>
+          </div> -->
+          <div id="box3"></div>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-sm-10 col-sm-offset-2">
+          <article class="item item-sm">
+            <img src="potato1.jpg" alt="" class="img img-full">
+            <aside class="detail text-center">
+              <h4 class="price">
+                $0.99/lb
+              </h4>
+              <span class="actions">
+                <i class="fa fa-shopping-cart"></i>
+                <i class="fa fa-link"></i>
+              </span>
+            </aside>
+          </article>
+          <article class="item item-sm">
+            <img src="strawberries1.jpg" alt="" class="img img-full">
+            <aside class="detail text-center">
+              <h4 class="price">
+                $1.99/lb
+              </h4>
+              <span class="actions">
+                <i class="fa fa-shopping-cart"></i>
+                <i class="fa fa-link"></i>
+              </span>
+            </aside>
+          </article>
+          <article class="item item-sm">
+            <img src="green_bean1.jpg" alt="" class="img img-full">
+            <aside class="detail text-center">
+              <h4 class="price">
+                $2.99/lb
+              </h4>
+              <span class="actions">
+                <i class="fa fa-shopping-cart"></i>
+                <i class="fa fa-link"></i>
+              </span>
+            </aside>
+          </article>
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="col-sm-6">
+          <div id="box4"></div>
+        </div>
+        <div class="col-sm-6">
+          <div id="box5"></div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
     </div>
-    <h4>Example Details</h4>
-    <p>This is written with JSX with Harmony (ES6) syntax and transformed in the browser.<p>
-    <p>
-      Learn more about React at
-      <a href="https://facebook.github.io/react" target="_blank">facebook.github.io/react</a>.
-    </p>
-    <script src="node_modules/react/dist/react.js"></script>
-
-    <script src="node_modules/react/dist/JSXTransformer.js"></script>
-
-    <script type="text/jsx;harmony=true" src="./example.js">
-    </script>
-
+    
+    <!-- // <script src="node_modules/react/dist/react.js"></script> -->
+    <!-- <script src="node_modules/react/dist/JSXTransformer.js"></script> -->
+    <!--<script type="text/jsx;harmony=true" src="./example.js">    </script>-->
+    <script src="dist/output.js"></script>
   </body>
 </html>
