@@ -5,7 +5,7 @@
   "name": "potato-box",
   "version": "1.0.2",
   "description": "Simple react tabs with good HTML mark-up",
-  "main": "./src/potato.js",
+  "main": "./src/potato.jsx",
   "dependencies": {
     "react": "~0.13.3"
   },
