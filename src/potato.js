@@ -1,4 +1,5 @@
 var React = require("react/addons");
+
 class PtLabel extends React.Component{
   render(){
     var {children,setTabIndex,index,active,...otherProps} = this.props;
@@ -25,7 +26,6 @@ class PtLabelList extends React.Component{
             // console.log(e);
             if(index!==activeTab){
               if(onTabChange) onTabChange(index);
-              
             }
             if(onLabelClick) onLabelClick(label,index);
           }
